@@ -2,19 +2,15 @@ using System;
 
 namespace ZgadnijLiczbe
 {
-    // DZIEDZICZENIE: 'StandardGame' przejmuje (dziedziczy) wszystkie właściwości po abstrakcyjnej klasie 'Game'.
     public class StandardGame : Game
     {
-        // ENKAPSULACJA: Hermetyzacja specyficznej dla tego trybu zmiennej.
         private int _betLimit;
 
-        // DZIEDZICZENIE: Przekazanie zmiennej 'diff' do konstruktora klasy bazowej ('base').
         public StandardGame(Difficulty diff, int betLimit) : base(diff)
         {
             _betLimit = betLimit;
         }
 
-        // POLIMORFIZM: Nadpisanie (override) metody Play(). Tu znajduje się implementacja dla trybu standardowego.
         public override PlayerRecord Play()
         {
             _timer.Start();
@@ -41,7 +37,7 @@ namespace ZgadnijLiczbe
                 }
                 else
                 {
-                    PrintMessage(guess < _secretNumber); // Użycie metody z klasy bazowej
+                    PrintMessage(guess < _secretNumber);
                 }
             }
         }
