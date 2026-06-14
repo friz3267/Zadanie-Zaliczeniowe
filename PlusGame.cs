@@ -2,7 +2,6 @@ using System;
 
 namespace ZgadnijLiczbe
 {
-    // DZIEDZICZENIE: Podobnie jak 'StandardGame', ten tryb dziedziczy po 'Game'.
     public class PlusGame : Game
     {
         private int _reshuffleLimit;
@@ -14,8 +13,6 @@ namespace ZgadnijLiczbe
             else _reshuffleLimit = 8;
         }
 
-        // POLIMORFIZM: Nadpisujemy tę samą metodę Play(), co w StandardGame, 
-        // ale program wykonuje tu inną logikę (mechanika Nowej Gry Plus z przelosowaniem).
         public override PlayerRecord Play()
         {
             _timer.Start();
