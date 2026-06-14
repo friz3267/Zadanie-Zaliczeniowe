@@ -3,13 +3,8 @@ using System.Diagnostics;
 
 namespace ZgadnijLiczbe
 {
-    // ABSTRAKCJA: Klasa 'Game' jest abstrakcyjna. Działa jako ogólny wzorzec,
-    // ukrywając wspólne mechanizmy gry. Nie można stworzyć obiektu samej "Gry",
-    // trzeba stworzyć konkretny tryb (StandardGame lub PlusGame).
     public abstract class Game
     {
-        // ENKAPSULACJA: Zmienne są ukryte (protected) przed resztą programu, 
-        // dostęp do nich mają tylko klasy dziedziczące po 'Game'.
         protected Difficulty _diff;
         protected int _secretNumber;
         protected int _triesCount;
@@ -31,17 +26,13 @@ namespace ZgadnijLiczbe
             GenerateNumber();
         }
 
-        // ENKAPSULACJA: Metoda pomocnicza ukrywająca mechanizm losowania.
         protected void GenerateNumber()
         {
             _secretNumber = _rng.Next(1, _maxRange + 1);
         }
 
-        // ABSTRAKCJA / POLIMORFIZM: Deklaracja metody abstrakcyjnej. 
-        // Każda gra musi mieć metodę Play(), ale każda zrealizuje ją po swojemu.
         public abstract PlayerRecord Play();
 
-        // ENKAPSULACJA: Ukrycie mechaniki wypisywania losowych wiadomości.
         protected void PrintMessage(bool tooSmall)
         {
             string[] smallPl = { "Liczba jest za mała!", "Zbyt niska wartość!", "Podnieś trochę!", "Celuj wyżej!", "Zdecydowanie za mało!" };
