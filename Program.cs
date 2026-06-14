@@ -45,8 +45,6 @@ namespace ZgadnijLiczbe
             if (diffChoice == "2") diff = Difficulty.Medium;
             if (diffChoice == "3") diff = Difficulty.Hard;
 
-            // POLIMORFIZM W AKCJI: Zmienna typu bazowego (Game) może przechowywać obiekt dowolnej 
-            // klasy dziedziczącej (StandardGame lub PlusGame). Metoda Play() zachowa się odpowiednio do wyboru.
             Game game = null;
 
             if (mode == "1")
@@ -65,7 +63,7 @@ namespace ZgadnijLiczbe
             }
 
             Console.Clear();
-            PlayerRecord record = game.Play(); // <- To wywołanie to czysty polimorfizm
+            PlayerRecord record = game.Play();
             if (record != null)
             {
                 hof.AddRecord(record);
